@@ -17,3 +17,6 @@ module Tree
   treeFold (f) zero (Leaf n) = f (n) (zero)
   treeFold (f) zero (Branch l x r) = treeFold f (f x (treeFold f zero r)) l
   newMap t = treeFold (:) [] t
+
+  instance Show BinaryTree where
+    show = show $ treeMap
